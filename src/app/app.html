@@ -56,22 +56,24 @@
         <h2 class="hero-subtitle mb-10 text-secondary font-bold" style="color: var(--color-main)">
           Construimos soluciones
         </h2>
-        <p class="mb-12 text-xl text-secondary lg:text-2xl max-w-3xl mx-auto">
+        <p class="mb-12 text-xl text-secondary lg:text-2xl max-w-3xl mx-auto font-bold">
           Somos un equipo multidisciplinario de desarrolladores y diseñadores UX, transformando
           ideas en productos digitales excepcionales.
         </p>
         <div class="flex flex-wrap justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
           <a
             href="#contacto"
-            class="group relative overflow-hidden rounded-full bg-main px-10 py-5 text-lg font-medium transition-all hover:scale-105 hover:shadow-xl hover:shadow-main/50"
-            style="--hover-color: var(--color-hover); color: var(--color-main)"
+            class="rounded-full px-10 py-5 text-lg font-medium text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-main/50"
+            style="
+              background: linear-gradient(135deg, var(--color-main) 0%, var(--color-hover) 100%);
+            "
           >
-            <span class="relative z-10">Iniciar proyecto</span>
+            Iniciar proyecto
           </a>
           <a
             href="#servicios"
-            class="glass-effect rounded-full border border-main/30 px-10 py-5 text-lg font-medium text-text transition-all hover:scale-105 hover:border-main"
-            style="--hover-color: var(--color-main); color: var(--color-main)"
+            class="rounded-full border-2 px-10 py-5 text-lg font-medium shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl"
+            style="color: var(--color-main); border-color: var(--color-main); background: white"
           >
             Ver servicios
           </a>
@@ -510,5 +512,17 @@
     </div>
   </div>
 </footer>
+
+<!-- WhatsApp Button -->
+<a
+  href="https://wa.me/5492254411966"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-main/50"
+  style="background: linear-gradient(135deg, var(--color-main) 0%, var(--color-hover) 100%)"
+  aria-label="Contactar por WhatsApp"
+>
+  <i class="fa-brands fa-whatsapp text-4xl text-white"></i>
+</a>
 
 <router-outlet />
