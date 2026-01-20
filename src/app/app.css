@@ -46,6 +46,18 @@
   animation: float 6s ease-in-out infinite;
 }
 
+/* Hero text sizing with clamp */
+.hero-title {
+  font-size: clamp(4rem, 10vw, 3.7rem);
+  line-height: 1.1;
+  margin-bottom: 0 !important;
+}
+
+.hero-subtitle {
+  font-size: clamp(3rem, 8vw, 3.7rem);
+  line-height: 1.2;
+}
+
 /* Smooth transitions */
 * {
   transition-property: color, background-color, border-color, transform;
@@ -79,4 +91,8 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #f4a6d6;
+}
+
+.title {
+  font-size: 3.7rem;
 }

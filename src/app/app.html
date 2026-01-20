@@ -28,74 +28,53 @@
 
 <!-- Hero Section -->
 <section class="relative min-h-screen overflow-hidden pt-24">
-  <!-- Animated Background -->
+  <!-- Background image with opacity -->
   <div class="absolute inset-0 -z-10">
-    <div class="absolute inset-0 bg-gradient-to-br from-background via-white to-hover/20"></div>
+    <img
+      src="assets/img/teamwork.avif"
+      alt="Teamwork"
+      class="h-full w-full object-cover opacity-45"
+    />
+    <!-- Gradient overlay -->
     <div
-      class="absolute top-0 right-0 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-main/20 to-transparent blur-3xl animate-pulse"
-    ></div>
-    <div
-      class="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-gradient-to-tr from-hover/30 to-transparent blur-3xl animate-pulse"
-      style="animation-delay: 2s"
+      class="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/90"
     ></div>
     <!-- Grid pattern -->
     <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
   </div>
 
   <div class="container mx-auto px-6 py-20">
-    <div class="flex flex-col items-center justify-center gap-12 lg:flex-row">
-      <!-- Left Content -->
-      <div class="flex-1 text-center lg:text-left" data-aos="fade-right">
-        <div class="mb-6 inline-block rounded-full border border-main/20 bg-main/10 px-6 py-2">
-          <span class="text-sm font-medium" style="color: var(--color-main)"
+    <div class="flex flex-col items-center justify-center text-center">
+      <!-- Content -->
+      <div class="max-w-5xl" data-aos="fade-up">
+        <div class="mb-8 inline-block rounded-full border border-main/20 bg-main/10 px-8 py-3">
+          <span class="text-base font-medium lg:text-lg" style="color: var(--color-main)"
             >Diseño UX | Desarrollo Web</span
           >
         </div>
-        <h1 class="mb-6 text-5xl font-bold leading-tight text-text lg:text-7xl">
-          Diseñamos<br />
-          <span style="color: var(--color-main)">experiencias</span>
-        </h1>
-        <h2 class="mb-8 text-3xl font-light text-secondary lg:text-4xl">Construimos soluciones</h2>
-        <p class="mb-10 text-lg text-secondary">
+        <h1 class="hero-title font-bold text-text mb-0">Diseñamos experiencias</h1>
+        <h2 class="hero-subtitle mb-10 text-secondary font-bold" style="color: var(--color-main)">
+          Construimos soluciones
+        </h2>
+        <p class="mb-12 text-xl text-secondary lg:text-2xl max-w-3xl mx-auto">
           Somos un equipo multidisciplinario de desarrolladores y diseñadores UX, transformando
           ideas en productos digitales excepcionales.
         </p>
-        <div class="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex flex-wrap justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
           <a
             href="#contacto"
-            class="group relative overflow-hidden rounded-full bg-main px-8 py-4 font-medium transition-all hover:scale-105 hover:shadow-xl hover:shadow-main/50"
+            class="group relative overflow-hidden rounded-full bg-main px-10 py-5 text-lg font-medium transition-all hover:scale-105 hover:shadow-xl hover:shadow-main/50"
             style="--hover-color: var(--color-hover); color: var(--color-main)"
           >
             <span class="relative z-10">Iniciar proyecto</span>
           </a>
           <a
             href="#servicios"
-            class="glass-effect rounded-full border border-main/30 px-8 py-4 font-medium text-text transition-all hover:scale-105 hover:border-main"
+            class="glass-effect rounded-full border border-main/30 px-10 py-5 text-lg font-medium text-text transition-all hover:scale-105 hover:border-main"
             style="--hover-color: var(--color-main); color: var(--color-main)"
           >
             Ver servicios
           </a>
-        </div>
-      </div>
-
-      <!-- Right Visual -->
-      <div class="relative flex-1" data-aos="fade-left">
-        <div class="relative">
-          <div class="glass-card rounded-3xl border border-border/50 p-8 backdrop-blur-xl">
-            <img
-              src="assets/logo/isologo_color.svg"
-              alt="TriNodes Logo"
-              class="mx-auto h-64 w-64 animate-float"
-            />
-          </div>
-          <!-- Floating elements -->
-          <div
-            class="absolute -right-4 -top-4 h-24 w-24 animate-pulse rounded-full bg-gradient-to-br from-main to-hover opacity-20 blur-2xl"
-          ></div>
-          <div
-            class="absolute -bottom-4 -left-4 h-32 w-32 animate-pulse rounded-full bg-gradient-to-br from-main to-hover opacity-20 blur-2xl"
-            style="animation-delay: 1s"
-          ></div>
         </div>
       </div>
     </div>
