@@ -15,12 +15,16 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
+.service-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .service-card:hover {
   box-shadow:
     0 25px 50px rgba(236, 38, 143, 0.2),
     0 0 0 1px rgba(236, 38, 143, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  transform: translateY(-1rem) scale(1.02);
+  transform: translateY(-0.5rem) scale(1.01);
 }
 
 /* Grid pattern background */
@@ -60,9 +64,18 @@
 
 /* Smooth transitions */
 * {
-  transition-property: color, background-color, border-color, transform;
-  transition-duration: 300ms;
-  transition-timing-function: ease-in-out;
+  transition-property: color, background-color, border-color, transform, box-shadow, opacity;
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Specific smooth transitions for interactive elements */
+a, button {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover, button:hover {
+  transition-duration: 0.3s;
 }
 
 /* Cursor glow effect */
