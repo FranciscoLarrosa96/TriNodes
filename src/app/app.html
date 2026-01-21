@@ -13,6 +13,21 @@
       <div class="flex items-center gap-3">
         <img src="assets/logo/trinodes_header.svg" alt="TriNodes" class="h-10 w-50" />
       </div>
+      
+      <!-- Dark Mode Toggle - Mobile -->
+      <button
+        (click)="toggleDarkMode()"
+        class="theme-toggle flex h-10 w-10 items-center justify-center rounded-full transition-all cursor-pointer md:hidden"
+        [attr.aria-label]="isDarkMode() ? 'Activar modo claro' : 'Activar modo oscuro'"
+      >
+        @if (isDarkMode()) {
+          <i class="fa-solid fa-sun text-xl"></i>
+        } @else {
+          <i class="fa-solid fa-moon text-xl"></i>
+        }
+      </button>
+      
+      <!-- Desktop Menu -->
       <div class="hidden items-center gap-8 md:flex">
         <a href="#servicios" class="text-secondary transition-colors hover:text-[#EC268F]"
           >Servicios</a
@@ -21,7 +36,7 @@
         <a href="#contacto" class="text-secondary transition-colors hover:text-[#EC268F]"
           >Contacto</a
         >
-        <!-- Dark Mode Toggle -->
+        <!-- Dark Mode Toggle - Desktop -->
         <button
           (click)="toggleDarkMode()"
           class="theme-toggle flex h-10 w-10 items-center justify-center rounded-full transition-all cursor-pointer"
@@ -419,7 +434,7 @@
 </section>
 
 <!-- Contact Section -->
-<section id="contacto" class="relative py-32">
+<section id="contacto" class="relative py-20 md:py-32">
   <!-- Decorative elements -->
   <div class="absolute inset-0 -z-10 overflow-hidden">
     <div
@@ -431,9 +446,9 @@
     ></div>
   </div>
 
-  <div class="container mx-auto px-6">
+  <div class="container mx-auto px-4 md:px-6">
     <div
-      class="glass-card group relative mx-auto max-w-5xl overflow-hidden rounded-[3rem] border-2 border-white/60 p-20 text-center shadow-2xl"
+      class="glass-card group relative mx-auto max-w-5xl overflow-hidden rounded-3xl md:rounded-[3rem] border-2 border-white/60 p-8 md:p-20 text-center shadow-2xl"
       data-aos="fade-up"
     >
       <!-- Animated background gradient -->
@@ -448,27 +463,27 @@
 
       <div class="relative z-10">
         <!-- Icono más grande y vistoso -->
-        <div class="mb-10 relative inline-block">
+        <div class="mb-8 md:mb-10 relative inline-block">
           <div
             class="absolute inset-0 rounded-3xl blur-2xl opacity-70 animate-pulse"
             style="background: linear-gradient(135deg, #ec268f 0%, #f4a6d6 100%)"
           ></div>
           <div
-            class="relative flex h-32 w-32 items-center justify-center rounded-3xl shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-6"
+            class="relative flex h-24 w-24 md:h-32 md:w-32 items-center justify-center rounded-3xl shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-6"
             style="
               background: linear-gradient(135deg, #ec268f 0%, #f06bab 50%, #f4a6d6 100%);
               box-shadow: 0 25px 50px -12px rgba(236, 38, 143, 0.5);
             "
           >
-            <i class="fa-solid fa-paper-plane text-6xl text-white"></i>
+            <i class="fa-solid fa-paper-plane text-4xl md:text-6xl text-white"></i>
           </div>
         </div>
 
-        <h2 class="mb-6 text-5xl font-bold text-text lg:text-6xl">
-          ¿Tienes un proyecto<br />
+        <h2 class="mb-4 md:mb-6 text-3xl md:text-5xl lg:text-6xl font-bold text-text leading-tight">
+          ¿Tienes un proyecto
           <span style="color: var(--color-main)">en mente?</span>
         </h2>
-        <p class="mb-10 text-xl text-secondary max-w-2xl mx-auto leading-relaxed">
+        <p class="mb-8 md:mb-10 text-base md:text-xl text-secondary max-w-2xl mx-auto leading-relaxed px-4">
           Trabajemos juntos para transformar tus ideas en experiencias digitales excepcionales
         </p>
 
