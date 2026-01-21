@@ -5,15 +5,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        main: '#EC268F', // Rosa vibrante (elementos principales)
-        secondary: '#848688', // Gris neutro (elementos secundarios)
-        background: '#EEEDEE', // Gris muy claro para fondos
-        text: '#2f2f2f', // Gris oscuro para texto principal
-        border: '#e0dcd0', // Gris muy claro para bordes sutiles
-        hover: '#f4a6d6', // Rosa más claro para efectos hover
+        main: 'var(--color-main)', // Rosa vibrante (elementos principales)
+        secondary: 'var(--color-secondary)', // Gris neutro (elementos secundarios)
+        background: 'var(--color-background)', // Fondos
+        text: 'var(--color-text)', // Texto principal
+        border: 'var(--color-border)', // Bordes sutiles
+        hover: 'var(--color-hover)', // Efectos hover
       },
       fontFamily: {
         sans: ['Chopin', 'sans-serif'],
+      },
+      backgroundColor: {
+        background: 'var(--color-background)',
+      },
+      textColor: {
+        text: 'var(--color-text)',
       },
     },
   },

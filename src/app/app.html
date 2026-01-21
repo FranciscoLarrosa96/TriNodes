@@ -13,7 +13,7 @@
       <div class="flex items-center gap-3">
         <img src="assets/logo/trinodes_header.svg" alt="TriNodes" class="h-10 w-50" />
       </div>
-      <div class="hidden gap-8 md:flex">
+      <div class="hidden items-center gap-8 md:flex">
         <a href="#servicios" class="text-secondary transition-colors hover:text-[#EC268F]"
           >Servicios</a
         >
@@ -21,6 +21,18 @@
         <a href="#contacto" class="text-secondary transition-colors hover:text-[#EC268F]"
           >Contacto</a
         >
+        <!-- Dark Mode Toggle -->
+        <button
+          (click)="toggleDarkMode()"
+          class="theme-toggle flex h-10 w-10 items-center justify-center rounded-full transition-all cursor-pointer"
+          [attr.aria-label]="isDarkMode() ? 'Activar modo claro' : 'Activar modo oscuro'"
+        >
+          @if (isDarkMode()) {
+            <i class="fa-solid fa-sun text-xl"></i>
+          } @else {
+            <i class="fa-solid fa-moon text-xl"></i>
+          }
+        </button>
       </div>
     </div>
   </div>
@@ -47,11 +59,6 @@
     <div class="flex flex-col items-center justify-center text-center">
       <!-- Content -->
       <div class="max-w-5xl" data-aos="fade-up">
-        <div class="mb-8 inline-block rounded-full border border-main/20 bg-main/10 px-8 py-3">
-          <span class="text-base font-medium lg:text-lg" style="color: var(--color-main)"
-            >Diseño UX | Desarrollo Web</span
-          >
-        </div>
         <h1 class="hero-title font-bold text-text mb-0">Diseñamos experiencias</h1>
         <h2 class="hero-subtitle mb-10 text-secondary font-bold" style="color: var(--color-main)">
           Construimos soluciones
@@ -63,17 +70,13 @@
         <div class="flex flex-wrap justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
           <a
             href="#contacto"
-            class="rounded-full px-10 py-5 text-lg font-medium text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-main/50"
-            style="
-              background: linear-gradient(135deg, var(--color-main) 0%, var(--color-hover) 100%);
-            "
+            class="hero-btn-primary rounded-full px-10 py-5 text-lg font-bold text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-main/50"
           >
             Iniciar proyecto
           </a>
           <a
             href="#servicios"
-            class="rounded-full border-2 px-10 py-5 text-lg font-medium shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl"
-            style="color: var(--color-main); border-color: var(--color-main); background: white"
+            class="hero-btn-secondary rounded-full border-2 px-10 py-5 text-lg font-bold shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl"
           >
             Ver servicios
           </a>

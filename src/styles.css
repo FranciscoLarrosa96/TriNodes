@@ -17,6 +17,23 @@
   --color-background: #eeedee;
   --color-text: #2f2f2f;
   --color-hover: #f4a6d6;
+  --color-border: #e0dcd0;
+  --color-card-bg: rgba(255, 255, 255, 0.9);
+  --color-glass: rgba(255, 255, 255, 0.85);
+  --color-overlay: rgba(255, 255, 255, 0.95);
+}
+
+/* Dark Mode Colors */
+.dark {
+  --color-main: #ff3da1;
+  --color-secondary: #b0b3b5;
+  --color-background: #0f0f0f;
+  --color-text: #e5e5e5;
+  --color-hover: #ff6bb8;
+  --color-border: #2a2a2a;
+  --color-card-bg: rgba(25, 25, 25, 0.9);
+  --color-glass: rgba(20, 20, 20, 0.85);
+  --color-overlay: rgba(15, 15, 15, 0.95);
 }
 
 html {
@@ -25,4 +42,42 @@ html {
 
 body {
   font-family: 'Chopin', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Hero Buttons */
+.hero-btn-primary {
+  background: linear-gradient(135deg, var(--color-main) 0%, var(--color-hover) 100%) !important;
+}
+
+.hero-btn-secondary {
+  color: var(--color-main) !important;
+  border-color: var(--color-main) !important;
+  background: white !important;
+}
+
+/* Dark mode - Estado normal del botón secundario */
+.dark .hero-btn-secondary {
+  background: rgba(255, 61, 161, 0.15) !important;
+  border-color: rgba(255, 61, 161, 0.6) !important;
+  color: #ff3da1 !important;
+  box-shadow: 0 0 20px rgba(255, 61, 161, 0.25) !important;
+}
+
+/* Dark mode - Hover del botón secundario */
+.dark .hero-btn-secondary:hover {
+  background: rgba(255, 61, 161, 0.3) !important;
+  border-color: rgba(255, 61, 161, 1) !important;
+  box-shadow: 0 0 35px rgba(255, 61, 161, 0.5) !important;
+}
+
+/* Dark mode - Botón primario con más glow */
+.dark .hero-btn-primary {
+  box-shadow: 0 0 30px rgba(255, 61, 161, 0.4), 0 20px 40px rgba(255, 61, 161, 0.3) !important;
+}
+
+.dark .hero-btn-primary:hover {
+  box-shadow: 0 0 40px rgba(255, 61, 161, 0.6), 0 20px 50px rgba(255, 61, 161, 0.4) !important;
 }

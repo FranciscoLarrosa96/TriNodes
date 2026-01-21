@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, signal, inject, PLATFORM_ID, effect } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import AOS from 'aos';
@@ -16,6 +16,29 @@ export class App implements OnInit {
   protected readonly title = signal('triNodesLanding');
   protected readonly mouseX = signal(0);
   protected readonly mouseY = signal(0);
+  protected readonly isDarkMode = signal(false);
+
+  constructor() {
+    // Load dark mode preference from localStorage
+    if (isPlatformBrowser(this.platformId)) {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      this.isDarkMode.set(savedTheme === 'dark' || (!savedTheme && prefersDark));
+    }
+
+    // Apply dark mode class when signal changes
+    effect(() => {
+      if (isPlatformBrowser(this.platformId)) {
+        if (this.isDarkMode()) {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        }
+      }
+    });
+  }
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -26,6 +49,10 @@ export class App implements OnInit {
         offset: 50,
       });
     }
+  }
+
+  protected toggleDarkMode(): void {
+    this.isDarkMode.update((value) => !value);
   }
 
   onMouseMove(event: MouseEvent): void {

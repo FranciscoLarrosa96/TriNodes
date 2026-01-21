@@ -1,18 +1,28 @@
 /* Glassmorphism effects */
 .glass-effect {
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--color-glass);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
+.dark .glass-effect {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
 .glass-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+  background: var(--color-card-bg);
   backdrop-filter: blur(30px) saturate(180%);
   -webkit-backdrop-filter: blur(30px) saturate(180%);
   box-shadow:
     0 8px 32px rgba(236, 38, 143, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.dark .glass-card {
+  box-shadow:
+    0 8px 32px rgba(255, 61, 161, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .service-card {
@@ -25,6 +35,58 @@
     0 0 0 1px rgba(236, 38, 143, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
   transform: translateY(-0.5rem) scale(1.01);
+}
+
+.dark .service-card:hover {
+  box-shadow:
+    0 25px 50px rgba(255, 61, 161, 0.25),
+    0 0 0 1px rgba(255, 61, 161, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Hero Buttons */
+.hero-btn-primary {
+  background: linear-gradient(135deg, var(--color-main) 0%, var(--color-hover) 100%) !important;
+}
+
+.hero-btn-secondary {
+  color: var(--color-main) !important;
+  border-color: var(--color-main) !important;
+  background: white !important;
+}
+
+html.dark .hero-btn-secondary,
+.dark .hero-btn-secondary {
+  background: rgba(255, 61, 161, 0.15) !important;
+  border-color: rgba(255, 61, 161, 0.6) !important;
+  color: #ff3da1 !important;
+}
+
+html.dark .hero-btn-secondary:hover,
+.dark .hero-btn-secondary:hover {
+  background: rgba(255, 61, 161, 0.25) !important;
+  border-color: rgba(255, 61, 161, 0.9) !important;
+  box-shadow: 0 0 30px rgba(255, 61, 161, 0.4) !important;
+}
+
+/* Dark Mode Toggle Button */
+.theme-toggle {
+  background: var(--color-card-bg);
+  color: var(--color-main);
+  border: 2px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle:hover {
+  background: var(--color-main);
+  color: white;
+  border-color: var(--color-main);
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 4px 12px rgba(236, 38, 143, 0.3);
+}
+
+.dark .theme-toggle:hover {
+  box-shadow: 0 4px 12px rgba(255, 61, 161, 0.4);
 }
 
 /* Grid pattern background */
@@ -67,6 +129,14 @@
   transition-property: color, background-color, border-color, transform, box-shadow, opacity;
   transition-duration: 400ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth theme transition */
+.dark,
+.dark *,
+:root,
+:root * {
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
 }
 
 /* Specific smooth transitions for interactive elements */
